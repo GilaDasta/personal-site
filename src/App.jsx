@@ -15,20 +15,100 @@ function App() {
 
   return (
     <div className="app" dir="ltr">
-      {/* Top Navigation */}
-      <header className="topbar">
-        <div className="logo">Gila Desta</div>
+      <header
+        style={{
+          position: "sticky",
+          top: 0,
+          zIndex: 1000,
+          background: "linear-gradient(90deg, #020617, #050816, #0a0f2c)",
+          borderBottom: "1px solid rgba(255,255,255,0.08)",
+          padding: "18px 40px",
+        }}
+      >
+        <div
+          style={{
+            maxWidth: "1400px",
+            margin: "0 auto",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "space-between",
+            gap: "20px",
+          }}
+        >
+          <div
+            style={{
+              fontSize: "28px",
+              fontWeight: "300",
+              fontFamily: "cursive",
+              color: "white",
+              letterSpacing: "1px",
+              whiteSpace: "nowrap",
+            }}
+          >
+            Gila_Dasta
+          </div>
 
-        <nav className="nav">
-          <a href="#about">About</a>
-          <a href="#skills">Skills</a>
-          <a href="#projects">Projects</a>
-          <a href="#contact">Contact</a>
-        </nav>
+          <nav>
+            <ul
+              style={{
+                display: "flex",
+                listStyle: "none",
+                gap: "32px",
+                margin: 0,
+                padding: 0,
+                alignItems: "center",
+                fontSize: "15px",
+                fontWeight: "600",
+                flexWrap: "wrap",
+                justifyContent: "flex-end",
+              }}
+            >
+              <li>
+                <a href="#home" style={activeLink}>
+                  Home
+                </a>
+              </li>
+              <li>
+                <a href="#about" style={link}>
+                  About
+                </a>
+              </li>
+              <li>
+                <a href="#experience" style={link}>
+                  Experience
+                </a>
+              </li>
+              <li>
+                <a href="#education" style={link}>
+                  Education
+                </a>
+              </li>
+              <li>
+                <a href="#skills" style={link}>
+                  Skills & Expertise
+                </a>
+              </li>
+              <li>
+                <a href="#projects" style={link}>
+                  Key Projects
+                </a>
+              </li>
+              <li>
+                <a href="#my-projects" style={link}>
+                  My Projects
+                </a>
+              </li>
+              <li>
+                <a href="#contact" style={link}>
+                  Contact
+                </a>
+              </li>
+            </ul>
+          </nav>
+        </div>
       </header>
 
-      {/* Hero Section */}
-      <section className="hero">
+      <section className="hero" id="home">
         <div className="hero-glow hero-glow-1"></div>
         <div className="hero-glow hero-glow-2"></div>
 
@@ -38,20 +118,16 @@ function App() {
           </div>
 
           <div className="hero-text">
-            <p className="hero-mini">PERSONAL BRAND</p>
-
-            <h1>Gila Desta</h1>
+            <h1>Gila Dasta</h1>
 
             <h2>
-              Information Systems <span>–</span> Data <span>–</span> Digital
-              Innovation
+              DATA<span>–</span> ANALYTICS <span>–</span> DIGITAL INNOVATION
             </h2>
 
             <p className="hero-description">
-              Outstanding Information Systems student with a strong foundation
-              in data analysis, web development, and business processes.
-              Passionate about transforming data into insights and building
-              smart, user-centered digital solutions.
+              Transforming data into insights and business value. Combining
+              analytical thinking, technology, and system understanding to build
+              smart, user-focused digital solutions.
             </p>
 
             <div className="hero-actions">
@@ -66,9 +142,7 @@ function App() {
         </div>
       </section>
 
-      {/* Main Content */}
       <main className="container">
-        {/* About */}
         <section className="card" id="about">
           <h2>About Me</h2>
           <p>
@@ -81,9 +155,29 @@ function App() {
           </p>
         </section>
 
-        {/* Skills */}
+        <section className="card" id="experience">
+          <h2>Experience</h2>
+          <p>
+            I have experience in customer service, business processes, and
+            working in dynamic environments that require responsibility,
+            communication skills, and the ability to learn quickly. Alongside my
+            studies, I have developed a strong professional mindset and
+            practical understanding of systems, users, and organizational needs.
+          </p>
+        </section>
+
+        <section className="card" id="education">
+          <h2>Education</h2>
+          <p>
+            B.A. in Information Systems with strong academic performance and a
+            growing focus on data, digital solutions, and business analysis.
+            Throughout my studies, I have worked on projects involving system
+            analysis, SQL, Python, React, and product-oriented thinking.
+          </p>
+        </section>
+
         <section className="card" id="skills">
-          <h2>Skills</h2>
+          <h2>Skills & Expertise</h2>
           <div className="skills-grid">
             {skills.map((skill) => (
               <span key={skill} className="skill-badge">
@@ -93,9 +187,8 @@ function App() {
           </div>
         </section>
 
-        {/* Projects */}
         <section className="card" id="projects">
-          <h2>Selected Projects</h2>
+          <h2>Key Projects</h2>
 
           <div className="projects-grid">
             <div className="project-card">
@@ -131,7 +224,15 @@ function App() {
           </div>
         </section>
 
-        {/* Contact */}
+        <section className="card" id="my-projects">
+          <h2>My Projects</h2>
+          <p>
+            This section can include additional academic, technical, or personal
+            projects that reflect my abilities, creativity, and passion for
+            building meaningful digital solutions.
+          </p>
+        </section>
+
         <section className="contact-section" id="contact">
           <h2>Contact</h2>
 
@@ -163,5 +264,16 @@ function App() {
     </div>
   );
 }
+
+const link = {
+  color: "#a1a1aa",
+  textDecoration: "none",
+};
+
+const activeLink = {
+  color: "#6366f1",
+  textDecoration: "none",
+  fontWeight: "700",
+};
 
 export default App;
