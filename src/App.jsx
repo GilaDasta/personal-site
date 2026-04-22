@@ -1,5 +1,6 @@
 import "./App.css";
 import profileImg from "./assets/profile.jpg";
+import profileImg from "./assets/profile.jpg";
 
 function App() {
   const skills = [
